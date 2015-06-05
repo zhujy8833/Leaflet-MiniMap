@@ -246,17 +246,17 @@
 			}
 		},
 
-        _onMiniMapClicked: function (e) {
-            if(this._isMiniMapDragged) { return false; }
-      			if (!this._mainMapMoving) {
-      				this._miniMapMoving = true;
-      				this._mainMap.setView(e.latlng, this._decideZoom(false));
-      				this._shadowRect.setStyle({opacity:0,fillOpacity:0});
-              this._aimingRect.setBounds(this._mainMap.getBounds());
-      			} else {
-      				this._mainMapMoving = false;
-      			}
-    		},
+            _onMiniMapClicked: function (e) {
+                if(this._isMiniMapDragged) { return false; }
+          			if (!this._mainMapMoving) {
+          				this._miniMapMoving = true;
+          				this._mainMap.setView(e.latlng, this._decideZoom(false));
+          				this._shadowRect.setStyle({opacity:0,fillOpacity:0});
+                  this._aimingRect.setBounds(this._mainMap.getBounds());
+          			} else {
+          				this._mainMapMoving = false;
+          			}
+        		},
 
 		_decideZoom: function (fromMaintoMini) {
 			if (!this.options.zoomLevelFixed) {
