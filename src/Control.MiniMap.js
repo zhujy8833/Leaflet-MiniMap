@@ -95,9 +95,9 @@
 				this._miniMap.on('movestart', this._onMiniMapMoveStarted, this);
 				this._miniMap.on('move', this._onMiniMapMoving, this);
 				this._miniMap.on('moveend', this._onMiniMapMoved, this);
-        if(this.options.enableMiniMapClick) {
-          this._miniMap.on('mouseup', this._onMiniMapClicked, this);
-        }
+            if(this.options.enableMiniMapClick) {
+                this._miniMap.on('mouseup', this._onMiniMapClicked, this);
+            }
 			}, this));
 
 			return this._container;
@@ -114,9 +114,9 @@
 			this._mainMap.off('moveend', this._onMainMapMoved, this);
 			this._mainMap.off('move', this._onMainMapMoving, this);
 			this._miniMap.off('moveend', this._onMiniMapMoved, this);
-      if(this.options.enableMiniMapClick) {
-        this._miniMap.off('mouseup', this._onMiniMapClicked, this);
-      }
+          if(this.options.enableMiniMapClick) {
+            this._miniMap.off('mouseup', this._onMiniMapClicked, this);
+          }
 
 			this._miniMap.removeLayer(this._layer);
 		},
@@ -246,17 +246,17 @@
 			}
 		},
 
-    _onMiniMapClicked: function (e) {
-      if(this._isMiniMapDragged) { return false; }
-			if (!this._mainMapMoving) {
-				this._miniMapMoving = true;
-				this._mainMap.setView(e.latlng, this._decideZoom(false));
-				this._shadowRect.setStyle({opacity:0,fillOpacity:0});
-        this._aimingRect.setBounds(this._mainMap.getBounds());
-			} else {
-				this._mainMapMoving = false;
-			}
-		},
+        _onMiniMapClicked: function (e) {
+            if(this._isMiniMapDragged) { return false; }
+      			if (!this._mainMapMoving) {
+      				this._miniMapMoving = true;
+      				this._mainMap.setView(e.latlng, this._decideZoom(false));
+      				this._shadowRect.setStyle({opacity:0,fillOpacity:0});
+              this._aimingRect.setBounds(this._mainMap.getBounds());
+      			} else {
+      				this._mainMapMoving = false;
+      			}
+    		},
 
 		_decideZoom: function (fromMaintoMini) {
 			if (!this.options.zoomLevelFixed) {
